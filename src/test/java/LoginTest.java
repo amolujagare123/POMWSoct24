@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest {
@@ -15,6 +16,8 @@ public class LoginTest {
         login.setTxtUser("admin");
         login.setTxtPass("admin");
         login.clickLogin();
+
+        Assert.assertEquals(driver.getTitle(), "Dashboard");
     }
 
 }
